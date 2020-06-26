@@ -14,8 +14,8 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
-|body|text|null: false|
+|image|text||
+|body|text||
 |user|reference|null: false, foreign_key: true|
 |group|reference|null: false, foreign_key: true|
 ### Association
