@@ -26,7 +26,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name_id|integer|null: false, foreign_key: true|
-###　Association
+### Association
 - has_many :users, through: :users_groups
 - has_many :users_groups
 
