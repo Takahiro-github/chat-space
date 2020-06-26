@@ -20,15 +20,16 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name_id|integer|null: false, foreign_key: true|
+|name|string|null: false, foreign_key: true|
 ### Association
 - has_many :users, through: :users_groups
 - has_many :users_groups
+- has_many :messages
 
 ## users_groupsテーブル
 |Column|Type|Options|
