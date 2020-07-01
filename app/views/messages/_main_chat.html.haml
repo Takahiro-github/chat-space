@@ -1,0 +1,39 @@
+.chat-main
+  .chat-main__chat-header
+    .chat-main__chat-header__header-left
+      .chat-main__chat-header__header-left__group-name
+        test
+      %ul.chat-main__chat-header__header-left__member
+        Member :
+        %li.chat-main__chat-header__header-left__member-name
+          &nbsp;name
+    .chat-main__chat-header__header-right
+      = link_to "#", class: "chat-main__chat-header__header-right__btn" do
+        Edit
+  .chat-main__message-list
+    .chat-main__message-list__history
+      .chat-main__message-list__history__name
+        masa
+      .chat-main__message-list__history__time
+        2999/00/00(Wed) 00:00:00
+    .chat-main__message-list__history-text
+      .chat-main__message-list__history-text__comment
+        おはよう！
+    .chat-main__message-list__history
+      .chat-main__message-list__history__name
+        masa
+      .chat-main__message-list__history__time
+        2999/00/00(Wed) 00:00:00
+    .chat-main__message-list__history-text
+      .chat-main__message-list__history-text__comment
+        サンタさん
+  
+  = form_with url: "#", method: :post, local: true do |form|
+    .chat-main__message-form
+      .chat-main__message-form__box
+        = form.text_field :text, placeholder: "type a message", class: "chat-main__message-form__box__message"
+        = form.label :image, class: "chat-main__message-form__image__btn" do
+          = icon('fas', 'image')
+          = form.file_field :image
+      = form.submit "Send", class: "chat-main__message-form__send"
+  
