@@ -4,18 +4,15 @@
       .side-bar__user-name__top-items__user-id
         masa
       %ul.side-bar__user-name__top-items__icons
-        = link_to "#" do
+        = link_to new_group_path do
           %li= icon('far', 'edit', class: 'side-bar__user-name__top-items__icons--pen')
         = link_to "#" do
           %li= icon('fas', 'cog', class: 'side-bar__user-name__top-items__icons--gear')
   .side-bar__group-list
-    .side-bar__group-list__info
-      .side-bar__group-list__info__top
-        techcamp
-      .side-bar__group-list__info__center
-        まだメッセージがありません
-    .side-bar__group-list__info
-      .side-bar__group-list__info__top
-        techcamp
-      .side-bar__group-list__info__center
-        まだメッセージがありません
+    -  current_user.groups.each do |group|
+      .side-bar__group-list__info
+        =  link_to '#' do
+          .side-bar__group-list__info__top
+            = group.name
+          .side-bar__group-list__info__center
+            メッセージはまだありません
