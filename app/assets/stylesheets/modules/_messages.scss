@@ -52,6 +52,7 @@
     height: calc(100vh - 100px - 90px);
     padding-left: 40px;
     padding-top: 35px;
+    overflow: scroll;
       &__history{
         display: flex;
         &__name{
@@ -152,10 +153,16 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 0 20px;
+    // a{
+    // text-decoration: none;
+    // }
     &__info{
       padding-top: 20px;
       width: 260px;
       padding-bottom: 40px;;
+      a{
+        text-decoration: none;
+        }
       &__top{
         font-size: 15px;
         color: #ffffff;
