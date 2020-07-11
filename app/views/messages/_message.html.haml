@@ -1,10 +1,10 @@
-.chat-main__message-list__history
-  .chat-main__message-list__history__name
-    = message.user.name
-  .chat-main__message-list__history__time
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.chat-main__message-list__history-text
-  .chat-main__message-list__history-text__comment
+.chat-main__message-list__message
+  .chat-main__message-list__history
+    .chat-main__message-list__history__name
+      = message.user.name
+    .chat-main__message-list__history__time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chat-main__message-list__history-text
     - if message.content.present?
       %p.Message__content
         = message.content
