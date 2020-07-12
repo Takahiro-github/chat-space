@@ -6,7 +6,7 @@
       %ul.side-bar__user-name__top-items__icons
         = link_to new_group_path do
           %li= icon('far', 'edit', class: 'side-bar__user-name__top-items__icons--pen')
-        = link_to "#" do
+        = link_to edit_user_path(current_user) do
           %li= icon('fas', 'cog', class: 'side-bar__user-name__top-items__icons--gear')
   .side-bar__group-list
     -  current_user.groups.each do |group|
