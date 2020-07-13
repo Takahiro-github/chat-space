@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="chat-main__message-list__message">
+        `<div class="chat-main__message-list__message" data-message-id=${message.id}>
           <div class="chat-main__message-list__history">
             <div class="chat-main__message-list__history__name">
               ${message.user_name}
@@ -21,21 +21,21 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="chat-main__message-list__message">
-        <div class="chat-main__message-list__history">
-          <div class="chat-main__message-list__history__name">
-            ${message.user_name}
+        `<div class="chat-main__message-list__message" data-message-id=${message.id}>
+          <div class="chat-main__message-list__history">
+            <div class="chat-main__message-list__history__name">
+              ${message.user_name}
+            </div>
+            <div class="chat-main__message-list__history__time">
+              ${message.created_at}
+            </div>
           </div>
-          <div class="chat-main__message-list__history__time">
-            ${message.created_at}
+          <div class="chat-main__message-list__history-text">
+            <p class="Message__content">
+              ${message.content}
+            </p>
           </div>
-        </div>
-        <div class="chat-main__message-list__history-text">
-          <p class="Message__content">
-            ${message.content}
-          </p>
-        </div>
-      </div>`
+        </div>`
         return html;
     };
   }
@@ -43,7 +43,6 @@ $(function(){
     e.preventDefault()
     let formData = new FormData(this);
     let url = $(this).attr('action')
-    console.log(this)
     $.ajax({
       url: url,  //同期通信でいう『パス』
       type: 'POST',  //同期通信でいう『HTTPメソッド』
