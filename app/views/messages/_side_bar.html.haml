@@ -2,7 +2,7 @@
   .side-bar__user-name
     .side-bar__user-name__top-items
       .side-bar__user-name__top-items__user-id
-        = @group.name
+        = current_user.name
       %ul.side-bar__user-name__top-items__icons
         = link_to new_group_path do
           %li= icon('far', 'edit', class: 'side-bar__user-name__top-items__icons--pen')
